@@ -1,0 +1,39 @@
+import type { int } from "../../common.js";
+import type { Context } from "../../core/context.js";
+import type { Parser } from "../../core/parser.js";
+import { Failure, type Result } from "../../core/result.js";
+import { DelegateParser } from "./delegate.js";
+
+export { OptionalParser };
+
+class OptionalParser<T> extends DelegateParser<T, T> {
+    readonly otherwise: T
+
+    constructor(delegate: Parser<T>, otherwise: T) {
+        super(delegate);
+        this.otherwise = otherwise;
+    }
+
+    override parseOn(context: Context): Result<T> {
+        const result = this.delegate.parseOn(context);
+        if (! (result instanceof Failure)) {
+            return result;
+        } else {
+            return context.success(this.otherwise);
+        }
+    }
+
+    override fastParseOn(buffer: string, position: int | number): int {
+        const result = this.delegate.fastParseOn(buffer, position);
+        return result < 0 ? position as int : result;
+    }
+
+    override copy(): OptionalParser<T> {
+        return new OptionalParser(this.delegate, this.otherwise);
+
+    }
+
+    override hasEqualProperties(other: OptionalParser<T>): boolean {
+        return super.hasEqualProperties(other) && this.otherwise === other.otherwise;
+    }
+}

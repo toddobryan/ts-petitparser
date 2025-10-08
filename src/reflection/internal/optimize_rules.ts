@@ -1,0 +1,97 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { Parser } from "../../core/parser.js";
+import { FlattenParser } from "../../parser/action/flatten.js";
+import { ChoiceParser, toChoiceParser } from "../../parser/combinator/choice.js";
+import { DelegateParser } from "../../parser/combinator/delegate.js";
+import { SettableParser } from "../../parser/combinator/settable.js";
+import { LabelParser } from "../../parser/misc/label.js";
+import { SingleCharacterParser } from "../../parser/predicate/single_character.js";
+import { RepeatingCharacterParser } from "../../parser/repeater/character.js";
+import { PossessiveRepeatingParser } from "../../parser/repeater/possessive.js";
+import type { Analyzer } from "../analyzer.js";
+import { OptimizeRule, type ReplaceParser } from "../optimize.js";
+
+export { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate };
+
+class CharacterRepeater extends OptimizeRule {
+    constructor() {
+        super();
+    }
+
+    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+        if (parser instanceof FlattenParser) {
+            const repeating = parser.delegate;
+            if (repeating instanceof PossessiveRepeatingParser) {
+                const character = repeating.delegate;
+                if (character instanceof SingleCharacterParser) {
+                    replace(
+                        parser as unknown as  Parser<T>,
+                        new RepeatingCharacterParser(
+                            character.predicate,
+                            character.message,
+                            repeating.min,
+                            repeating.max,
+                        ) as unknown as Parser<T>,
+                    );
+                }
+            }
+        }
+    }
+}
+
+class FlattenChoice extends OptimizeRule {
+    constructor() {
+        super();
+    }
+
+    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<any>): void {
+        if (parser instanceof ChoiceParser) {
+            const children = parser.children.flatMap((child) => 
+                child instanceof ChoiceParser && parser.failureJoiner === child.failureJoiner ?
+                    child.children :
+                    [child]
+            );
+            if (parser.children.length < children.length) {
+                replace(
+                    parser,
+                    toChoiceParser(children, parser.failureJoiner),
+                );
+            }
+        }
+    }
+}
+
+class RemoveDelegate extends OptimizeRule {
+    constructor() {
+        super();
+    }
+
+    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+        const settables: Set<Parser<T>> = new Set();
+        while (parser instanceof DelegateParser && 
+            (parser instanceof SettableParser || parser instanceof LabelParser)) {
+                const missing: boolean = !settables.has(parser);
+                settables.add(parser);
+                if (!missing) {
+                    break;
+                }
+                parser = parser.delegate;
+        }
+        for (const settable of settables) {
+            replace(settable, parser);
+        }
+    }
+}
+
+class RemoveDuplicate extends OptimizeRule {
+    constructor() {
+        super();
+    }
+
+    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+        const other = [...analyzer.parsers].find((each) => parser.isEqualTo(each)) ?? parser;
+        if (parser !== other) {
+            replace(parser, other as Parser<T>);
+        }
+    }
+}

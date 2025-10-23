@@ -1,7 +1,6 @@
-import { type int } from "../../common.js";
-import { Context } from "../../core/context.js";
-import { Result } from "../../core/result.js";
-import { Parser } from "../../core/parser.js";
+import { type int } from "../../common";
+import { Context, Result } from "../../core/result";
+import { Parser } from "../../core/parser";
 
 export { NewlineParser, newline };
 

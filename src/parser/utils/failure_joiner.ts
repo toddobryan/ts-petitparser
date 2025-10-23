@@ -1,4 +1,4 @@
-import type { Failure } from "../../core/result.js";
+import type { Failure } from "../../core/result";
 
 export type { FailureJoiner };
 export { selectFarthest, selectFarthestJoined, selectFirst, selectLast };

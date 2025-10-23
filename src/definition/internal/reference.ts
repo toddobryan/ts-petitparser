@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Context } from "../../core/context.js";
-import { UnsupportedError } from "../../core/errors.js";
-import { Parser } from "../../core/parser.js";
-import { Result } from "../../core/result.js";
-import { ResolvableParser } from "../../parser/utils/resolvable.js";
+import { Context } from "../../core/context";
+import { UnsupportedError } from "../../core/errors";
+import { Parser } from "../../core/parser";
+import { Result } from "../../core/result";
+import { ResolvableParser } from "../../parser/utils/resolvable";
 
 export { ReferenceParser };
 

@@ -1,6 +1,6 @@
-import { type int } from "../../common.js";
-import { Context } from "../../core/context.js";
-import { Parser } from "../../core/parser.js";
+import { type int } from "../../common";
+import { Context } from "../../core/context";
+import { Parser } from "../../core/parser";
 
 export { MatchesIterator };
 

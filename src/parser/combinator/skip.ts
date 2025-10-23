@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import type { Parser } from "../../core/parser.js";
-import { Failure, type Result } from "../../core/result.js";
-import { DelegateParser } from "./delegate.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import type { Parser } from "../../core/parser";
+import { Failure, type Result } from "../../core/result";
+import { DelegateParser } from "./delegate";
 
 export { SkipParser };
 

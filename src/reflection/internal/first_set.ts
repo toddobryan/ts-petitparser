@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../../core/parser.js";
-import { addAll, isNullable, isSequence, isTerminal } from "./utilities.js";
+import type { Parser } from "../../core/parser";
+import { addAll, isNullable, isSequence, isTerminal } from "./utilities";
 
 export { computeFirstSets, expandFirstSet };
 

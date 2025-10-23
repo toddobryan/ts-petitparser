@@ -1,8 +1,34 @@
-import { type int } from "../common.js";
-import { Context } from "./context.js";
-import { NotImplementedError, ParserError, UnsupportedError } from "./errors.js";
+import { type int } from "../common";
+import { NotImplementedError, ParserError, UnsupportedError } from "./errors";
+import { Token } from "./token";
 
-export { Result, Success, Failure };
+export { Context, Result, Success, Failure };
+
+class Context {
+    readonly buffer: string;
+    readonly position: int;
+
+    constructor(buffer: string, position: int) {
+        this.buffer = buffer;
+        this.position = position;
+    }
+
+    success<T>(result: T, position?: int): Success<T> {
+        return new Success<T>(this.buffer, position ?? this.position , result);
+    }
+
+    failure(message: string, position?: int): Failure {
+        return new Failure(this.buffer, position ?? this.position, message);
+    }
+
+    toPositionString(): string {
+        return Token.positionString(this.buffer, this.position);
+    }
+
+    toString(): string {
+        return `${this.constructor.name}[{this.toPositionString()}]`;
+    }
+}
 
 abstract class Result<T> extends Context {
     constructor(buffer: string, position: int) {

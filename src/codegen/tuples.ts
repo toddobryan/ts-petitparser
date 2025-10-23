@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-import { genArray } from "../common.js";
+import { genArray } from "../common";
 
 export { printCode, tupleInstancePrefix };
 

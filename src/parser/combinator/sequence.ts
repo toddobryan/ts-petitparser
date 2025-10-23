@@ -1,8 +1,8 @@
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import type { Parser } from "../../core/parser.js";
-import { Failure, type Result } from "../../core/result.js";
-import { ListParser } from "./list.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import type { Parser } from "../../core/parser";
+import { Failure, type Result } from "../../core/result";
+import { ListParser } from "./list";
 
 export { SequenceParser };
 

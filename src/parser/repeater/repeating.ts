@@ -1,7 +1,7 @@
-import type { int } from "../../common.js";
-import { StateError } from "../../core/errors.js";
-import type { Parser } from "../../core/parser.js";
-import { DelegateParser } from "../combinator/delegate.js";
+import type { int } from "../../common";
+import { StateError } from "../../core/errors";
+import type { Parser } from "../../core/parser";
+import { DelegateParser } from "../combinator/delegate";
 
 export { RepeatingParser };
 

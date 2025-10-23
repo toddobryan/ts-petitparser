@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../../core/parser.js";
-import { RepeatingParser } from "../../parser/repeater/repeating.js";
-import { addAll, isNullable, isSequence } from "./utilities.js";
+import type { Parser } from "../../core/parser";
+import { RepeatingParser } from "../../parser/repeater/repeating";
+import { addAll, isNullable, isSequence } from "./utilities";
 
 export { computeFollowSets };
 

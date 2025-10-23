@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UnsupportedError } from "../core/errors.js";
-import { Token } from "../core/token.js";
-import { ReferenceParser } from "../definition/internal/reference.js";
+import { UnsupportedError } from "../core/errors";
+import { Token } from "../core/token";
+import { ReferenceParser } from "../definition/internal/reference";
 
 export { hashCode, equals }
 

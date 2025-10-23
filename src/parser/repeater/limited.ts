@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { int } from "../../common.js";
-import type { Parser } from "../../core/parser.js";
-import { RepeatingParser } from "./repeating.js";
+import type { int } from "../../common";
+import type { Parser } from "../../core/parser";
+import { RepeatingParser } from "./repeating";
 
 export { LimitedRepeatingParser };
 

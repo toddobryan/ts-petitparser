@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import type { Parser } from "../../core/parser.js";
-import { Failure, type Result } from "../../core/result.js";
-import { SeparatedList } from "../utils/separated_list.js";
-import { RepeatingParser } from "./repeating.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import type { Parser } from "../../core/parser";
+import { Failure, type Result } from "../../core/result";
+import { SeparatedList } from "../utils/separated_list";
+import { RepeatingParser } from "./repeating";
 
 export { SeparatedRepeatingParser };
 

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { StateError } from "../core/errors.js";
-import { Parser } from "../core/parser.js";
-import { ResolvableParser } from "../parser/utils/resolvable.js";
+import { StateError } from "../core/errors";
+import { Parser } from "../core/parser";
+import { ResolvableParser } from "../parser/utils/resolvable";
 
 export { resolve };
 

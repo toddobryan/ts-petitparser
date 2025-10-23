@@ -1,4 +1,4 @@
-import type { int } from "../../common.js";
+import type { int } from "../../common";
 
 export { formatIterable };
 

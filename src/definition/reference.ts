@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
-import { Parser } from "../core/parser.js";
-import { ReferenceParser } from "./internal/reference.js";
+import { Parser } from "../core/parser";
+import { ReferenceParser } from "./internal/reference";
 
 export { ref, ref0, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9 };
 

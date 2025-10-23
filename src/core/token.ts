@@ -1,6 +1,6 @@
-import { type int } from "../common.js";
-import { newline } from "../parser/misc/newline.js";
-import { Parser } from "./parser.js";
+import { type int } from "../common";
+//import { newline } from "../parser/misc/newline";
+import { Parser } from "./parser";
 
 export { Token };
 
@@ -29,11 +29,11 @@ class Token<T> {
         return `${this.constructor.name}[${Token.positionString(this.buffer, this.start)}]: ${this.value}`;
     }
 
-    static newlineParser(): Parser<string> {
+    /*static newlineParser(): Parser<string> {
         return Token._newlineParser;
     }
 
-    static _newlineParser: Parser<string> = newline();
+    static _newlineParser: Parser<string> = newline();*/
 
     static lineAndColumnOf(buffer: string, position: int): [int, int] {
         let line = 1;

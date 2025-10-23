@@ -1,9 +1,9 @@
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import { StateError } from "../../core/errors.js";
-import type { Parser } from "../../core/parser.js";
-import { Failure, type Result } from "../../core/result.js";
-import { RepeatingParser } from "./repeating.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import { StateError } from "../../core/errors";
+import type { Parser } from "../../core/parser";
+import { Failure, type Result } from "../../core/result";
+import { RepeatingParser } from "./repeating";
 
 export { PossessiveRepeatingParser };
 

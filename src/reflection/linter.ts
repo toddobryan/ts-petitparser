@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../core/parser.js";
-import { Analyzer } from "./analyzer.js";
-import { CharacterRepeater, LeftRecursion, NestedChoice, NullableRepeater, OverlappingChoice, RepeatedChoice, UnnecessaryFlatten, UnnecessaryResolveable, UnoptimizedFlatten, UnreachableChoice, UnresolvedSettable, UnusedResult } from "./internal/linter_rules.js";
+import type { Parser } from "../core/parser";
+import { Analyzer } from "./analyzer";
+import { CharacterRepeater, LeftRecursion, NestedChoice, NullableRepeater, OverlappingChoice, RepeatedChoice, UnnecessaryFlatten, UnnecessaryResolveable, UnoptimizedFlatten, UnreachableChoice, UnresolvedSettable, UnusedResult } from "./internal/linter_rules";
 
 export { LinterIssue, LinterRule, LinterType, linter };
 

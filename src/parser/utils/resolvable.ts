@@ -1,4 +1,4 @@
-import { Parser } from "../../core/parser.js";
+import { Parser } from "../../core/parser";
 
 export { ResolvableParser };
 

@@ -1,8 +1,8 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { SingleCharPredicate } from "./predicate/char.js";
-import { toCharCode, toReadableString } from "./utils/code.js";
-import { optimizedString } from "./utils/optimize.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { SingleCharPredicate } from "./predicate/char";
+import { toCharCode, toReadableString } from "./utils/code";
+import { optimizedString } from "./utils/optimize";
 
 export { char };
 

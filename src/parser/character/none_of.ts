@@ -1,8 +1,8 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { NotCharPredicate } from "./predicate/not.js";
-import { toReadableString } from "./utils/code.js";
-import { optimizedString } from "./utils/optimize.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { NotCharPredicate } from "./predicate/not";
+import { toReadableString } from "./utils/code";
+import { optimizedString } from "./utils/optimize";
 
 export { noneOf };
 

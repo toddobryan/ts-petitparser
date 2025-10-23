@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Parser } from "../../core/parser.js"
-import { isNullable, isSequence, isTerminal } from "./utilities.js";
+import { isNullable, isSequence, isTerminal } from "./utilities";
 
 export { computeCycleSets };
 

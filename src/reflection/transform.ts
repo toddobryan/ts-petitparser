@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Parser } from "../core/parser.js";
-import { allParser } from "./iterable.js";
+import { Parser } from "../core/parser";
+import { allParser } from "./iterable";
 
 export { transformParser };
 

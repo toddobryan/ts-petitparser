@@ -1,6 +1,6 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { DigitCharPredicate } from "./predicate/digit.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { DigitCharPredicate } from "./predicate/digit";
 
 export { digit };
 

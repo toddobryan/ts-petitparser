@@ -1,4 +1,4 @@
-import { CharacterPredicate } from "../predicate.js";
+import { CharacterPredicate } from "../predicate";
 
 export { WhitespaceCharPredicate };
 

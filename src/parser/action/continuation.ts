@@ -1,7 +1,7 @@
-import { Context } from "../../core/context.js";
-import { Parser } from "../../core/parser.js";
-import { Result } from "../../core/result.js";
-import { DelegateParser } from "../combinator/delegate.js";
+import { Context } from "../../core/context";
+import { Parser } from "../../core/parser";
+import { Result } from "../../core/result";
+import { DelegateParser } from "../combinator/delegate";
 
 export { type ContinuationFunction, type ContinuationHandler, ContinuationParser };
 

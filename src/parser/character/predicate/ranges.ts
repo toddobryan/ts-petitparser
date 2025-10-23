@@ -1,6 +1,6 @@
-import { CharacterPredicate } from "../predicate.js";
-import { equals } from "./lookup.js";
-import { RangeCharPredicate } from "./range.js";
+import { CharacterPredicate } from "../predicate";
+import { equals } from "./lookup";
+import { RangeCharPredicate } from "./range";
 
 export { RangesCharPredicate };
 

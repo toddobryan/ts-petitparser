@@ -1,18 +1,18 @@
 import * as fs from "fs";
-import { genArray } from "../common.js";
-import { tupleInstancePrefix } from "./tuples.js";
+import { genArray } from "../common";
+import { tupleInstancePrefix } from "./tuples";
 
 export { printCode };
 
 const printCodeN = (n: number): void => {
     const imports: string[] = [
         "/* eslint-disable @typescript-eslint/no-explicit-any */",
-        'import type { int } from "../../../common.js";',
-        'import type { Context } from "../../../core/context.js";',
-        'import { Parser } from "../../../core/parser.js";',
-        'import { Failure, type Result } from "../../../core/result.js";',
-        'import type { SequentialParser } from "../../utils/sequential.js";',
-        `import { Tp${n} } from "./tuples.js";`,
+        'import type { int } from "../../../common";',
+        'import type { Context } from "../../../core/context";',
+        'import { Parser } from "../../../core/parser";',
+        'import { Failure, type Result } from "../../../core/result";',
+        'import type { SequentialParser } from "../../utils/sequential";',
+        `import { Tp${n} } from "./tuples";`,
     ]
 
     const types: string[] = genArray(n, (i: number) => `T${i + 1}`);

@@ -1,6 +1,6 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { LetterCharPredicate } from "./predicate/letter.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { LetterCharPredicate } from "./predicate/letter";
 
 export { letter };
 

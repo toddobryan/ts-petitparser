@@ -1,4 +1,4 @@
-import { hashCode, equals } from "./hash.js";
+import { hashCode, equals } from "./hash";
 
 export { HashMap, HashSet };
 

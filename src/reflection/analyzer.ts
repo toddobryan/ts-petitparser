@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { StateError } from "../core/errors.js";
-import type { Parser } from "../core/parser.js";
-import { EpsilonParser } from "../parser/misc/epsilon.js";
-import type { Predicate } from "../shared/types.js";
-import { computeCycleSets } from "./internal/cycle_set.js";
-import { computeFirstSets } from "./internal/first_set.js";
-import { computeFollowSets } from "./internal/follow_set.js";
-import { depthFirstSearch, ParserPath } from "./internal/path.js";
-import { allParser } from "./iterable.js";
+import { StateError } from "../core/errors";
+import type { Parser } from "../core/parser";
+import { EpsilonParser } from "../parser/misc/epsilon";
+import type { Predicate } from "../shared/types";
+import { computeCycleSets } from "./internal/cycle_set";
+import { computeFirstSets } from "./internal/first_set";
+import { computeFollowSets } from "./internal/follow_set";
+import { depthFirstSearch, ParserPath } from "./internal/path";
+import { allParser } from "./iterable";
 
 export { Analyzer };
 

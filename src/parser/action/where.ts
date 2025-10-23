@@ -1,8 +1,8 @@
-import { Context } from "../../core/context.js";
-import { Parser } from "../../core/parser.js";
-import { Result, Success } from "../../core/result.js";
-import { type Predicate } from "../../shared/types.js";
-import { DelegateParser } from "../combinator/delegate.js";
+import { Context } from "../../core/context";
+import { Parser } from "../../core/parser";
+import { Result, Success } from "../../core/result";
+import { type Predicate } from "../../shared/types";
+import { DelegateParser } from "../combinator/delegate";
 
 export { WhereParser, defaultFactory };
 export type { FailureFactory };

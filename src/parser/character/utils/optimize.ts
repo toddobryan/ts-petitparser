@@ -1,10 +1,10 @@
-import { genArray } from "../../../common.js";
-import { CharacterPredicate } from "../predicate.js";
-import { SingleCharPredicate } from "../predicate/char.js";
-import { ConstantCharPredicate } from "../predicate/constant.js";
-import { LookupCharPredicate } from "../predicate/lookup.js";
-import { RangeCharPredicate } from "../predicate/range.js";
-import { codePoints } from "./code.js";
+import { genArray } from "../../../common";
+import { CharacterPredicate } from "../predicate";
+import { SingleCharPredicate } from "../predicate/char";
+import { ConstantCharPredicate } from "../predicate/constant";
+import { LookupCharPredicate } from "../predicate/lookup";
+import { RangeCharPredicate } from "../predicate/range";
+import { codePoints } from "./code";
 
 export { optimizedRanges, optimizedString };
 

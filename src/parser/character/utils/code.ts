@@ -1,4 +1,4 @@
-import { StateError } from "../../../core/errors.js";
+import { StateError } from "../../../core/errors";
 
 export { codePoints, toCharCode, toReadableString };
 

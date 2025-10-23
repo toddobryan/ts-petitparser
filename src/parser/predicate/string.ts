@@ -1,6 +1,6 @@
-import type { int } from "../../common.js";
-import type { Parser } from "../../core/parser.js";
-import { predicate } from "./predicate.js";
+import type { int } from "../../common";
+import type { Parser } from "../../core/parser";
+import { predicate } from "./predicate";
 
 export { string };
 

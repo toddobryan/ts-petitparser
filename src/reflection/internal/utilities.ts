@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../../core/parser.js";
-import { OptionalParser } from "../../parser/combinator/optional.js";
-import { EpsilonParser } from "../../parser/misc/epsilon.js";
-import { PositionParser } from "../../parser/misc/position.js";
-import { RepeatingCharacterParser } from "../../parser/repeater/character.js";
-import { RepeatingParser } from "../../parser/repeater/repeating.js";
+import type { Parser } from "../../core/parser";
+import { OptionalParser } from "../../parser/combinator/optional";
+import { EpsilonParser } from "../../parser/misc/epsilon";
+import { PositionParser } from "../../parser/misc/position";
+import { RepeatingCharacterParser } from "../../parser/repeater/character";
+import { RepeatingParser } from "../../parser/repeater/repeating";
 
 export { isNullable, isTerminal, isSequence, addAll, isParserIterableEqual };
 

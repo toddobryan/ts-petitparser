@@ -1,5 +1,5 @@
-import { StateError } from "../../../core/errors.js";
-import { CharacterPredicate } from "../predicate.js";
+import { StateError } from "../../../core/errors";
+import { CharacterPredicate } from "../predicate";
 
 export { RangeCharPredicate };
 

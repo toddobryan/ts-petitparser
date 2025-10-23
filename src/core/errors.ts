@@ -1,5 +1,5 @@
-import { type int } from "../common.js";
-import { Failure } from "./result.js";
+import { type int } from "../common";
+import { Failure } from "./result";
 
 export { NotImplementedError, ParserError, StateError, UnsupportedError };
 

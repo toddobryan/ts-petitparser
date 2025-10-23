@@ -1,9 +1,9 @@
-import { type int } from "../../common.js";
-import { Context } from "../../core/context.js";
-import { Parser } from "../../core/parser.js";
-import { Result, Failure } from "../../core/result.js";
-import { Token } from "../../core/token.js";
-import { DelegateParser } from "../combinator/delegate.js";
+import { type int } from "../../common";
+import { Context } from "../../core/context";
+import { Parser } from "../../core/parser";
+import { Result, Failure } from "../../core/result";
+import { Token } from "../../core/token";
+import { DelegateParser } from "../combinator/delegate";
 
 export { TokenParser };
 

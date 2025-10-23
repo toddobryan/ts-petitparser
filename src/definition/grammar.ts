@@ -1,6 +1,6 @@
-import { Parser } from "../core/parser.js";
-import { ref0 } from "./reference.js";
-import { resolve } from "./resolve.js";
+import { Parser } from "../core/parser";
+import { ref0 } from "./reference";
+import { resolve } from "./resolve";
 
 export { GrammarDefinition };
 

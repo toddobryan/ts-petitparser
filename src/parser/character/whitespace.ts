@@ -1,6 +1,6 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { WhitespaceCharPredicate } from "./predicate/whitespace.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { WhitespaceCharPredicate } from "./predicate/whitespace";
 
 export { whitespace };
 

@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Temporal } from "temporal-polyfill";
 
-import { Parser } from "../core/parser.js";
-import { transformParser } from "../reflection/transform.js";
-import { type Predicate, type VoidCallback } from "../shared/types.js";
-import type { ContinuationFunction } from "../parser/action/continuation.js";
-import type { Context } from "../core/context.js";
+import { Parser } from "../core/parser";
+import { transformParser } from "../reflection/transform";
+import { type Predicate, type VoidCallback } from "../shared/types";
+import type { ContinuationFunction } from "../parser/action/continuation";
+import type { Context } from "../core/context";
 
 export { profile };
 

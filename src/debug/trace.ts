@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Context } from "../core/context.js";
-import { Parser } from "../core/parser.js";
-import { Result } from "../core/result.js";
-import { transformParser } from "../reflection/transform.js";
-import { type VoidCallback, type Predicate } from "../shared/types.js";
+import { Context } from "../core/context";
+import { Parser } from "../core/parser";
+import { Result } from "../core/result";
+import { transformParser } from "../reflection/transform";
+import { type VoidCallback, type Predicate } from "../shared/types";
 
 export { TraceEvent, trace };
 

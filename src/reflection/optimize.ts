@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../core/parser.js";
-import { Analyzer } from "./analyzer.js";
-import { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate } from "./internal/optimize_rules.js";
+import type { Parser } from "../core/parser";
+import { Analyzer } from "./analyzer";
+import { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate } from "./internal/optimize_rules";
 
 export { OptimizeRule, type ReplaceParser, optimize };
 

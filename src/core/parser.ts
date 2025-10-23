@@ -1,22 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type int } from "../common.js";
-import { CastParser } from "../parser/action/cast.js";
-import { CastListParser } from "../parser/action/cast_list.js";
-import { type ContinuationHandler, ContinuationParser } from "../parser/action/continuation.js";
-import { FlattenParser } from "../parser/action/flatten.js";
-import { MapParser } from "../parser/action/map.js";
-import { PermuteParser } from "../parser/action/permute.js";
-import { PickParser } from "../parser/action/pick.js";
-import { TokenParser } from "../parser/action/token.js";
-import { TrimmingParser } from "../parser/action/trim.js";
-import { type FailureFactory, WhereParser, defaultFactory } from "../parser/action/where.js";
-import { whitespace } from "../parser/character/whitespace.js";
-import { AndParser } from "../parser/combinator/and.js";
-import { type Callback, type Predicate } from "../shared/types.js";
-import { Context } from "./context.js";
-import { Failure, Result } from "./result.js";
-import { Token } from "./token.js";
+import { type int } from "../common";
+import { Context, Failure, Result } from "./result";
 
 export { Parser };
 
@@ -166,6 +151,9 @@ abstract class Parser<T> {
         return callback<T>(this);
     }
 
+    get runtimeType(): string {
+        return this.constructor.name;
+    }
 
     toString(): string {
         return this.constructor.name;
@@ -177,6 +165,10 @@ abstract class Parser<T> {
     }
 
     // Extensions in Dart code
+    /*accept(input: string, start: int = 0 as int): boolean {
+        return this.fastParseOn(input, start) > 0;
+    }
+
     and(): Parser<T> {
         return new AndParser(this);
     }
@@ -220,5 +212,5 @@ abstract class Parser<T> {
 
     where(predicate: Predicate<T>, message?: string, factory?: FailureFactory<T>): Parser<T> {
         return new WhereParser(this, predicate, factory ?? defaultFactory(message))
-    }
+    }*/
 }

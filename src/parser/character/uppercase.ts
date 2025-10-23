@@ -1,6 +1,6 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { UppercaseCharPredicate } from "./predicate/uppercase.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { UppercaseCharPredicate } from "./predicate/uppercase";
 
 export { uppercase };
 

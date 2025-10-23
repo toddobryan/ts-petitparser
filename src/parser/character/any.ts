@@ -1,6 +1,6 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { ConstantCharPredicate } from "./predicate/constant.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { ConstantCharPredicate } from "./predicate/constant";
 
 export { any };
 

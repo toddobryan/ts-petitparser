@@ -1,10 +1,10 @@
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import { StateError } from "../../core/errors.js";
-import type { Parser } from "../../core/parser.js";
-import { Failure, type Result } from "../../core/result.js";
-import { selectLast, type FailureJoiner } from "../utils/failure_joiner.js";
-import { ListParser } from "./list.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import { StateError } from "../../core/errors";
+import type { Parser } from "../../core/parser";
+import { Failure, type Result } from "../../core/result";
+import { selectLast, type FailureJoiner } from "../utils/failure_joiner";
+import { ListParser } from "./list";
 
 export { ChoiceParser, toChoiceParser };
 

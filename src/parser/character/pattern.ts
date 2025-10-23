@@ -1,12 +1,12 @@
-/*import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { any } from "./any.js";
-import { char } from "./char.js";
-import { ConstantCharPredicate } from "./predicate/constant.js";
-import { NotCharPredicate } from "./predicate/not.js";
-import { RangeCharPredicate } from "./predicate/range.js";
-import { toCharCode, toReadableString } from "./utils/code.js";
-import { optimizedRanges } from "./utils/optimize.js";
+/*import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { any } from "./any";
+import { char } from "./char";
+import { ConstantCharPredicate } from "./predicate/constant";
+import { NotCharPredicate } from "./predicate/not";
+import { RangeCharPredicate } from "./predicate/range";
+import { toCharCode, toReadableString } from "./utils/code";
+import { optimizedRanges } from "./utils/optimize";
 
 export { pattern };
 

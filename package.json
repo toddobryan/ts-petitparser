@@ -1,13 +1,16 @@
 {
-  "type": "module",
   "scripts": {
     "build": "tsc",
-    "codegen": "node dist/codegen/index.js",         
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "codegen": "node dist/codegen/index.js",
     "dev": "nodemon src/index.ts",
     "lint": "eslint ./src/**/*.ts"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.6.2",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.45.0",
@@ -15,8 +18,10 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
+    "jest": "^30.2.0",
     "jiti": "^2.6.1",
     "prettier": "^3.6.2",
+    "ts-jest": "^29.4.4",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.45.0"
   },

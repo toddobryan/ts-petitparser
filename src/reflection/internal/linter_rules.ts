@@ -1,30 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { int } from "../../common.js";
-import type { Parser } from "../../core/parser.js";
-import { CastParser } from "../../parser/action/cast.js";
-import { CastListParser } from "../../parser/action/cast_list.js";
-import { FlattenParser } from "../../parser/action/flatten.js";
-import { MapParser } from "../../parser/action/map.js";
-import { PermuteParser } from "../../parser/action/permute.js";
-import { PickParser } from "../../parser/action/pick.js";
-import { TokenParser } from "../../parser/action/token.js";
-import { WhereParser } from "../../parser/action/where.js";
-import { ChoiceParser } from "../../parser/combinator/choice.js";
-import { SettableParser } from "../../parser/combinator/settable.js";
-import { FailureParser } from "../../parser/misc/failure.js";
-import { NewlineParser } from "../../parser/misc/newline.js";
-import { CharacterParser } from "../../parser/predicate/character.js";
-import { PredicateParser } from "../../parser/predicate/predicate.js";
-import { SingleCharacterParser } from "../../parser/predicate/single_character.js";
-import { RepeatingCharacterParser } from "../../parser/repeater/character.js";
-import { PossessiveRepeatingParser } from "../../parser/repeater/possessive.js";
-import { RepeatingParser } from "../../parser/repeater/repeating.js";
-import { SeparatedRepeatingParser } from "../../parser/repeater/separated.js";
-import { ResolvableParser } from "../../parser/utils/resolvable.js";
-import type { Analyzer } from "../analyzer.js";
-import { LinterIssue, LinterRule, LinterType } from "../linter.js";
-import { formatIterable } from "./formatting.js";
-import { isParserIterableEqual } from "./utilities.js";
+import type { int } from "../../common";
+import type { Parser } from "../../core/parser";
+import { CastParser } from "../../parser/action/cast";
+import { CastListParser } from "../../parser/action/cast_list";
+import { FlattenParser } from "../../parser/action/flatten";
+import { MapParser } from "../../parser/action/map";
+import { PermuteParser } from "../../parser/action/permute";
+import { PickParser } from "../../parser/action/pick";
+import { TokenParser } from "../../parser/action/token";
+import { WhereParser } from "../../parser/action/where";
+import { ChoiceParser } from "../../parser/combinator/choice";
+import { SettableParser } from "../../parser/combinator/settable";
+import { FailureParser } from "../../parser/misc/failure";
+import { NewlineParser } from "../../parser/misc/newline";
+import { CharacterParser } from "../../parser/predicate/character";
+import { PredicateParser } from "../../parser/predicate/predicate";
+import { SingleCharacterParser } from "../../parser/predicate/single_character";
+import { RepeatingCharacterParser } from "../../parser/repeater/character";
+import { PossessiveRepeatingParser } from "../../parser/repeater/possessive";
+import { RepeatingParser } from "../../parser/repeater/repeating";
+import { SeparatedRepeatingParser } from "../../parser/repeater/separated";
+import { ResolvableParser } from "../../parser/utils/resolvable";
+import type { Analyzer } from "../analyzer";
+import { LinterIssue, LinterRule, LinterType } from "../linter";
+import { formatIterable } from "./formatting";
+import { isParserIterableEqual } from "./utilities";
 
 export { 
     CharacterRepeater, LeftRecursion, NestedChoice, NullableRepeater, OverlappingChoice,  

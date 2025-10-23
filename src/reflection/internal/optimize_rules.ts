@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../../core/parser.js";
-import { FlattenParser } from "../../parser/action/flatten.js";
-import { ChoiceParser, toChoiceParser } from "../../parser/combinator/choice.js";
-import { DelegateParser } from "../../parser/combinator/delegate.js";
-import { SettableParser } from "../../parser/combinator/settable.js";
-import { LabelParser } from "../../parser/misc/label.js";
-import { SingleCharacterParser } from "../../parser/predicate/single_character.js";
-import { RepeatingCharacterParser } from "../../parser/repeater/character.js";
-import { PossessiveRepeatingParser } from "../../parser/repeater/possessive.js";
-import type { Analyzer } from "../analyzer.js";
-import { OptimizeRule, type ReplaceParser } from "../optimize.js";
+import type { Parser } from "../../core/parser";
+import { FlattenParser } from "../../parser/action/flatten";
+import { ChoiceParser, toChoiceParser } from "../../parser/combinator/choice";
+import { DelegateParser } from "../../parser/combinator/delegate";
+import { SettableParser } from "../../parser/combinator/settable";
+import { LabelParser } from "../../parser/misc/label";
+import { SingleCharacterParser } from "../../parser/predicate/single_character";
+import { RepeatingCharacterParser } from "../../parser/repeater/character";
+import { PossessiveRepeatingParser } from "../../parser/repeater/possessive";
+import type { Analyzer } from "../analyzer";
+import { OptimizeRule, type ReplaceParser } from "../optimize";
 
 export { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate };
 

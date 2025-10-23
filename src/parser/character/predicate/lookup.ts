@@ -1,7 +1,7 @@
-import { genArray } from "../../../common.js";
-import { StateError } from "../../../core/errors.js";
-import { CharacterPredicate } from "../predicate.js";
-import { RangeCharPredicate } from "./range.js";
+import { genArray } from "../../../common";
+import { StateError } from "../../../core/errors";
+import { CharacterPredicate } from "../predicate";
+import { RangeCharPredicate } from "./range";
 
 export { LookupCharPredicate, equals };
 

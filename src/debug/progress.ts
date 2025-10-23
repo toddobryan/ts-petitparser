@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type int } from "../common.js";
-import { Context } from "../core/context.js";
-import { Parser } from "../core/parser.js";
-import { transformParser } from "../reflection/transform.js";
-import { type VoidCallback, type Predicate } from "../shared/types.js";
+import { type int } from "../common";
+import { Context } from "../core/context";
+import { Parser } from "../core/parser";
+import { transformParser } from "../reflection/transform";
+import { type VoidCallback, type Predicate } from "../shared/types";
 
 export { progress };
 

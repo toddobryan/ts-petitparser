@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Parser } from "../../core/parser.js";
+import { Parser } from "../../core/parser";
 
 export { ListParser };
 

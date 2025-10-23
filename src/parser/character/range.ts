@@ -1,7 +1,7 @@
-import { Parser } from "../../core/parser.js";
-import { CharacterParser } from "../predicate/character.js";
-import { RangeCharPredicate } from "./predicate/range.js";
-import { toCharCode, toReadableString } from "./utils/code.js";
+import { Parser } from "../../core/parser";
+import { CharacterParser } from "../predicate/character";
+import { RangeCharPredicate } from "./predicate/range";
+import { toCharCode, toReadableString } from "./utils/code";
 
 export { range };
 

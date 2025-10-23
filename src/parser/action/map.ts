@@ -1,9 +1,9 @@
-import { type int } from "../../common.js";
-import { Context } from "../../core/context.js";
-import { Parser } from "../../core/parser.js";
-import { Failure } from "../../core/result.js";
-import { type Callback } from "../../shared/types.js";
-import { DelegateParser } from "../combinator/delegate.js";
+import { type int } from "../../common";
+import { Context } from "../../core/context";
+import { Parser } from "../../core/parser";
+import { Failure } from "../../core/result";
+import { type Callback } from "../../shared/types";
+import { DelegateParser } from "../combinator/delegate";
 
 export { MapParser };
 

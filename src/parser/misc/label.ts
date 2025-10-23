@@ -1,9 +1,9 @@
-import type { int } from "../../common.js";
-import type { Context } from "../../core/context.js";
-import type { Parser } from "../../core/parser.js";
-import type { Result } from "../../core/result.js";
-import { DelegateParser } from "../combinator/delegate.js";
-import type { LabeledParser } from "../utils/labeled.js";
+import type { int } from "../../common";
+import type { Context } from "../../core/context";
+import type { Parser } from "../../core/parser";
+import type { Result } from "../../core/result";
+import { DelegateParser } from "../combinator/delegate";
+import type { LabeledParser } from "../utils/labeled";
 
 export { LabelParser };
 

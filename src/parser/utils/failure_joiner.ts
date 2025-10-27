@@ -1,4 +1,4 @@
-import type { Failure } from "../../core/result";
+import type { Failure } from "../../core/context_result_and_errors";
 
 export type { FailureJoiner };
 export { selectFarthest, selectFarthestJoined, selectFirst, selectLast };

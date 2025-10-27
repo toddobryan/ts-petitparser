@@ -1,6 +1,4 @@
 import { type int } from "../common";
-//import { newline } from "../parser/misc/newline";
-import { Parser } from "./parser";
 
 export { Token };
 

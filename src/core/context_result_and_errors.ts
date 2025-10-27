@@ -1,8 +1,8 @@
 import { type int } from "../common";
-import { NotImplementedError, ParserError, UnsupportedError } from "./errors";
 import { Token } from "./token";
 
-export { Context, Result, Success, Failure };
+export { Context, Result, Success, Failure,
+    NotImplementedError, ParserError, StateError, UnsupportedError };
 
 class Context {
     readonly buffer: string;
@@ -31,7 +31,7 @@ class Context {
 }
 
 abstract class Result<T> extends Context {
-    constructor(buffer: string, position: int) {
+    protected constructor(buffer: string, position: int) {
         super(buffer, position);
     }
 
@@ -84,5 +84,44 @@ class Failure extends Result<never> {
 
     override toString(): string {
         return `${super.toString()}: ${this.message}`;
+    }
+}
+
+class ParserError extends Error {
+    failure: Failure;
+    offset: int;
+    source: string;
+
+    constructor(failure: Failure) {
+        super(failure.message);
+        this.failure = failure;
+        this.offset = failure.position;
+        this.source = failure.buffer;
+        this.name = "ParserException";
+    }
+
+    override toString(): string {
+        return `${this.constructor.name}[${this.failure.toPositionString()}]: ${this.message}`;
+    }
+}
+
+class NotImplementedError extends Error {
+    constructor(message = "This method or feature is not yet implemented.") {
+        super(message);
+        this.name = "NotImplementedError";
+    }
+}
+
+class StateError extends Error {
+    constructor(message = "The program has reached an illegal state.") {
+        super(message);
+        this.name = "StateError";
+    }
+}
+
+class UnsupportedError extends Error {
+    constructor(message = "This operation is not supported.") {
+        super(message);
+        this.name = "UnsupportedError";
     }
 }

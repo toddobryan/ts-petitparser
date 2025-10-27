@@ -1,7 +1,7 @@
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
 import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
+import type { Context, Result } from "../../core/context_result_and_errors";
+import {ParserImpl} from "../../core/parserImpl";
 
 export { FailureParser, failure };
 
@@ -9,7 +9,7 @@ const failure = (message: string = "unable to parse"): Parser<never> => {
     return new FailureParser(message);
 }
 
-class FailureParser extends Parser<never> {
+class FailureParser extends ParserImpl<never> {
     readonly message: string;
 
     constructor(message: string) {

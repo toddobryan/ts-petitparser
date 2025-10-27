@@ -5,22 +5,18 @@ import { ChoiceParser, toChoiceParser } from "../../parser/combinator/choice";
 import { DelegateParser } from "../../parser/combinator/delegate";
 import { SettableParser } from "../../parser/combinator/settable";
 import { LabelParser } from "../../parser/misc/label";
-import { SingleCharacterParser } from "../../parser/predicate/single_character";
+import { SingleCharacterParser } from "../../parser/predicate/character";
 import { RepeatingCharacterParser } from "../../parser/repeater/character";
 import { PossessiveRepeatingParser } from "../../parser/repeater/possessive";
 import type { Analyzer } from "../analyzer";
-import { OptimizeRule, type ReplaceParser } from "../optimize";
+import { type OptimizeRule, type ReplaceParser } from "../optimize";
 
 export { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate };
 
-class CharacterRepeater extends OptimizeRule {
-    constructor() {
-        super();
-    }
-
-    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+class CharacterRepeater implements OptimizeRule {
+    run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
         if (parser instanceof FlattenParser) {
-            const repeating = parser.delegate;
+            const repeating: Parser<any> = parser.delegate;
             if (repeating instanceof PossessiveRepeatingParser) {
                 const character = repeating.delegate;
                 if (character instanceof SingleCharacterParser) {
@@ -39,12 +35,8 @@ class CharacterRepeater extends OptimizeRule {
     }
 }
 
-class FlattenChoice extends OptimizeRule {
-    constructor() {
-        super();
-    }
-
-    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<any>): void {
+class FlattenChoice implements OptimizeRule {
+    run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<any>): void {
         if (parser instanceof ChoiceParser) {
             const children = parser.children.flatMap((child) => 
                 child instanceof ChoiceParser && parser.failureJoiner === child.failureJoiner ?
@@ -61,12 +53,8 @@ class FlattenChoice extends OptimizeRule {
     }
 }
 
-class RemoveDelegate extends OptimizeRule {
-    constructor() {
-        super();
-    }
-
-    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+class RemoveDelegate implements OptimizeRule {
+    run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
         const settables: Set<Parser<T>> = new Set();
         while (parser instanceof DelegateParser && 
             (parser instanceof SettableParser || parser instanceof LabelParser)) {
@@ -83,12 +71,8 @@ class RemoveDelegate extends OptimizeRule {
     }
 }
 
-class RemoveDuplicate extends OptimizeRule {
-    constructor() {
-        super();
-    }
-
-    override run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
+class RemoveDuplicate implements OptimizeRule {
+    run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void {
         const other = [...analyzer.parsers].find((each) => parser.isEqualTo(each)) ?? parser;
         if (parser !== other) {
             replace(parser, other as Parser<T>);

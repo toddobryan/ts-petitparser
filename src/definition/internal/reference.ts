@@ -1,25 +1,24 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Context } from "../../core/context";
-import { UnsupportedError } from "../../core/errors";
-import { Parser } from "../../core/parser";
-import { Result } from "../../core/result";
-import { ResolvableParser } from "../../parser/utils/resolvable";
+import {Parser} from "../../core/parser";
+import {Context, Result, UnsupportedError} from "../../core/context_result_and_errors";
+import {ResolvableParser} from "../../parser/utils/resolvable";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { ReferenceParser };
+export {ReferenceParser};
 
 class ReferenceParser<T> extends ResolvableParser<T> {
-    readonly funct: Function;
+    readonly func: Function;
     readonly args: any[];
 
-    constructor(funct: Function, args: any[]) {
+    constructor(func: Function, args: any[]) {
         super();
-        this.funct = funct;
+        this.func = func;
         this.args = args;
     }
 
     override resolve(): Parser<T> {
-        return this.funct(...this.args) as Parser<T>;
+        return this.func(...this.args) as Parser<T>;
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -35,13 +34,17 @@ class ReferenceParser<T> extends ResolvableParser<T> {
         if (!(other instanceof ReferenceParser)) {
             return false;
         } else {
-            if (this.funct !== other.funct || this.args.length !== other.args.length) {
+            if (this.func !== other.func || this.args.length !== other.args.length) {
                 return false;
             }
             for (let i = 0; i < this.args.length; i++) {
                 const a = this.args[i];
                 const b = other.args[i];
-                if (a instanceof Parser && !(a instanceof ReferenceParser) && b instanceof Parser && !(b instanceof ReferenceParser)) {
+                if (a instanceof ParserImpl &&
+                    !(a instanceof ReferenceParser) &&
+                    b instanceof ParserImpl &&
+                    !(b instanceof ReferenceParser)
+                ) {
                     if (!a.isEqualTo(b)) {
                         return false;
                     }
@@ -52,7 +55,6 @@ class ReferenceParser<T> extends ResolvableParser<T> {
                 }
             }
             return true;
-        }      
-        return false;
+        }
     }
 }

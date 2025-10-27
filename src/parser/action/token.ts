@@ -1,7 +1,6 @@
 import { type int } from "../../common";
-import { Context } from "../../core/context";
 import { Parser } from "../../core/parser";
-import { Result, Failure } from "../../core/result";
+import { Context, Result, Failure } from "../../core/context_result_and_errors";
 import { Token } from "../../core/token";
 import { DelegateParser } from "../combinator/delegate";
 

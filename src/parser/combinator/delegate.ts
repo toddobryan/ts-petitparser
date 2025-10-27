@@ -1,20 +1,22 @@
-import { Parser } from "../../core/parser";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import {type Parser} from "../../core/parser";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { DelegateParser };
+export {DelegateParser};
 
-abstract class DelegateParser<T, U> extends Parser<U> {
+abstract class DelegateParser<T, U> extends ParserImpl<U> {
     delegate: Parser<T>;
 
-    constructor(delegate: Parser<T>) {
+    protected constructor(delegate: Parser<T>) {
         super();
         this.delegate = delegate;
     }
 
-    override get children(): Parser<any>[] {
+    get children(): Parser<any>[] {
         return [this.delegate];
     }
 
-    override replace(source: Parser<any>, target: Parser<any>): void {
+    replace(source: Parser<any>, target: Parser<any>): void {
         super.replace(source, target);
         if (this.delegate === source) {
             this.delegate = target as Parser<T>;

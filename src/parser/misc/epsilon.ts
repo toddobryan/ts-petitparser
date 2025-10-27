@@ -1,9 +1,8 @@
-import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
+import type {int} from "../../common";
+import type {Context, Result} from "../../core/context_result_and_errors";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { EpsilonParser, epsilon, epsilonWith };
+export {EpsilonParser, epsilon, epsilonWith};
 
 const epsilon = (): EpsilonParser<null> => {
     return epsilonWith(null);
@@ -13,7 +12,7 @@ const epsilonWith = <T>(result: T): EpsilonParser<T> => {
     return new EpsilonParser(result);
 }
 
-class EpsilonParser<T> extends Parser<T> {
+class EpsilonParser<T> extends ParserImpl<T> {
     readonly result: T;
 
     constructor(result: T) {

@@ -1,7 +1,6 @@
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
+import type { Context, Result } from "../../core/context_result_and_errors";
+import {ParserImpl} from "../../core/parserImpl";
 
 export { PositionParser, position };
 
@@ -9,7 +8,7 @@ const position = (): PositionParser => {
     return new PositionParser();
 }
 
-class PositionParser extends Parser<int> {
+class PositionParser extends ParserImpl<int> {
     constructor() {
         super();
     }

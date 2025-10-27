@@ -1,17 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { Parser } from "../core/parser";
+import { type Parser } from "../core/parser";
 import { Analyzer } from "./analyzer";
 import { CharacterRepeater, FlattenChoice, RemoveDelegate, RemoveDuplicate } from "./internal/optimize_rules";
 
-export { OptimizeRule, type ReplaceParser, optimize };
+export { type OptimizeRule, type ReplaceParser, optimize };
 
 type ReplaceParser<T> = (source: Parser<T>, target: Parser<T>) => void;
 
-abstract class OptimizeRule {
-    constructor() {
-    }
-
-    abstract run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void;
+interface OptimizeRule {
+    run<T>(analyzer: Analyzer, parser: Parser<T>, replace: ReplaceParser<T>): void;
 }
 
 const allOptimizerRules: OptimizeRule[] = [

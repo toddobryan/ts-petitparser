@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
 import type { Parser } from "../../core/parser";
-import { Failure, type Result } from "../../core/result";
+import { Context, Failure, type Result } from "../../core/context_result_and_errors";
 import { SeparatedList } from "../utils/separated_list";
 import { RepeatingParser } from "./repeating";
 

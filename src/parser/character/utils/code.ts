@@ -1,4 +1,4 @@
-import { StateError } from "../../../core/errors";
+import { StateError } from "../../../core/context_result_and_errors";
 
 export { codePoints, toCharCode, toReadableString };
 

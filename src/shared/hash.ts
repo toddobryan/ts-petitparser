@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UnsupportedError } from "../core/errors";
+import { UnsupportedError } from "../core/context_result_and_errors";
 import { Token } from "../core/token";
 import { ReferenceParser } from "../definition/internal/reference";
 
@@ -13,7 +13,7 @@ const hashCode = (value: any): number => {
     } else if (value instanceof Function) {
         return hashString(value.toString());
     } else if (value instanceof ReferenceParser) {
-        return hashCode(value.funct);
+        return hashCode(value.func);
     } else {
         throw new UnsupportedError(`${value} of ${typeof value} has no hashCode implementation`)
     }

@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Parser } from "../../core/parser";
+import {type Parser} from "../../core/parser";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { ListParser };
+export {ListParser};
 
-abstract class ListParser<T, U> extends Parser<U> {
+abstract class ListParser<T, U> extends ParserImpl<U> {
     readonly _children: Parser<T>[];
 
     constructor(children: Parser<T>[]) {

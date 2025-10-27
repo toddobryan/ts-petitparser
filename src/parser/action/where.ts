@@ -1,6 +1,5 @@
-import { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import { Result, Success } from "../../core/result";
+import { type Parser } from "../../core/parser";
+import { type Context, type Result, Success } from "../../core/context_result_and_errors";
 import { type Predicate } from "../../shared/types";
 import { DelegateParser } from "../combinator/delegate";
 

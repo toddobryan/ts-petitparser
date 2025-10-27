@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Context } from "../core/context";
 import { Parser } from "../core/parser";
-import { Result } from "../core/result";
+import { Context, Result } from "../core/context_result_and_errors";
 import { transformParser } from "../reflection/transform";
 import { type VoidCallback, type Predicate } from "../shared/types";
 
@@ -44,7 +43,7 @@ class _TraceEvent extends TraceEvent {
     readonly _context: Context;
     readonly _result: Result<any> | null;
     
-    constructor(parent: TraceEvent | null, parser: Parser<any>, context: Context, result: Result<any> | null = null) { 
+    constructor(parent: TraceEvent | null, parser: Parser<any>, context: Context, result: Result<any> | null = null) {
         super();
         this._parent = parent;
         this._parser = parser;

@@ -1,13 +1,9 @@
-import { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import { Result } from "../../core/result";
+import { type Parser } from "../../core/parser";
+import { Context, Result } from "../../core/context_result_and_errors";
 import { DelegateParser } from "../combinator/delegate";
+import {ContinuationHandler} from "../../common";
 
-export { type ContinuationFunction, type ContinuationHandler, ContinuationParser };
-
-type ContinuationHandler<T, U> = (continuation: ContinuationFunction<T>, context: Context) => Result<U>;
-
-type ContinuationFunction<T> = (context: Context) => Result<T>;
+export { ContinuationParser };
 
 class ContinuationParser<T, U> extends DelegateParser<T, U> {
     readonly handler: ContinuationHandler<T, U>;

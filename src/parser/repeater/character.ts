@@ -1,13 +1,11 @@
-import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { StateError } from "../../core/errors";
-import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
-import type { CharacterPredicate } from "../character/predicate";
+import type {int} from "../../common";
+import {type Context, type Result, StateError} from "../../core/context_result_and_errors";
+import type {CharacterPredicate} from "../character/predicate";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { RepeatingCharacterParser };
+export {RepeatingCharacterParser};
 
-class RepeatingCharacterParser extends Parser<string> {
+class RepeatingCharacterParser extends ParserImpl<string> {
     readonly predicate: CharacterPredicate;
     readonly message: string;
     readonly min: int;
@@ -58,10 +56,10 @@ class RepeatingCharacterParser extends Parser<string> {
 
     override hasEqualProperties(other: RepeatingCharacterParser): boolean {
         return super.hasEqualProperties(other) &&
-        this.predicate === other.predicate &&
-        this.message === other.message &&
-        this.min === other.min &&
-        this.max === other.max;
+            this.predicate === other.predicate &&
+            this.message === other.message &&
+            this.min === other.min &&
+            this.max === other.max;
     }
 
     override toString(): string {

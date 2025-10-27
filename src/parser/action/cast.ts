@@ -1,6 +1,6 @@
 import { type int } from "../../common";
 import { Parser } from "../../core/parser";
-import { Context, Failure, Result } from "../../core/result";
+import { Context, Failure, Result } from "../../core/context_result_and_errors";
 import { DelegateParser } from "../combinator/delegate";
 
 export { CastParser };

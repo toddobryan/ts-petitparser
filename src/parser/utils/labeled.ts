@@ -1,7 +1,7 @@
-import { Parser } from "../../core/parser";
+import {ParserImpl} from "../../core/parserImpl";
 
 export { LabeledParser };
 
-abstract class LabeledParser<T> extends Parser<T> {
+abstract class LabeledParser<T> extends ParserImpl<T> {
     abstract get label(): string;
 }

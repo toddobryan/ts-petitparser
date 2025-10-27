@@ -4,8 +4,8 @@ import { Temporal } from "temporal-polyfill";
 import { Parser } from "../core/parser";
 import { transformParser } from "../reflection/transform";
 import { type Predicate, type VoidCallback } from "../shared/types";
-import type { ContinuationFunction } from "../parser/action/continuation";
-import type { Context } from "../core/context";
+import type { Context } from "../core/context_result_and_errors";
+import {ContinuationFunction} from "../common";
 
 export { profile };
 
@@ -65,19 +65,18 @@ const profile = <T>(
     });
 }
 
-abstract class ProfileFrame {
-    abstract get parser(): Parser<any>;
-    abstract get count(): number;
-    abstract get elapsed(): Temporal.Duration;
+interface ProfileFrame {
+    get parser(): Parser<any>;
+    get count(): number;
+    get elapsed(): Temporal.Duration;
 }
 
-class _ProfileFrame extends ProfileFrame {
+class _ProfileFrame implements ProfileFrame {
     _parser: Parser<any>
     _count: number;
     _stopwatch: Stopwatch;
 
     constructor(parser: Parser<any>) {
-        super();
         this._parser = parser;
         this._count = 0;
         this._stopwatch = new Stopwatch();
@@ -99,7 +98,7 @@ class _ProfileFrame extends ProfileFrame {
         return this._stopwatch.elapsed;
     }
 
-    override toString(): string {
+    toString(): string {
         return `${this.count}\t${this.elapsed.microseconds}\t${this.parser}`;
     }
 }

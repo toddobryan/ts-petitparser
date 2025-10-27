@@ -1,7 +1,6 @@
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
 import type { Parser } from "../../core/parser";
-import { Failure, type Result } from "../../core/result";
+import { Context, Failure, type Result } from "../../core/context_result_and_errors";
 import { DelegateParser } from "./delegate";
 
 export { AndParser };
@@ -11,7 +10,7 @@ class AndParser<T> extends DelegateParser<T, T> {
         super(delegate);
     }
 
-    override parseOn(context: Context): Result<T> {
+    parseOn(context: Context): Result<T> {
         const result = this.delegate.parseOn(context);
         if (result instanceof Failure) {
             return result;
@@ -20,12 +19,12 @@ class AndParser<T> extends DelegateParser<T, T> {
         }
     }
 
-    override fastParseOn(buffer: string, position: int | number): int {
+    fastParseOn(buffer: string, position: int | number): int {
         const result = this.delegate.fastParseOn(buffer, position);
         return (result < 0 ? -1 : position) as int;
     }
 
-    override copy(): AndParser<T> {
+    copy(): AndParser<T> {
         return new AndParser(this.delegate);
     }
 }

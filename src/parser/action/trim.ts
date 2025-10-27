@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type int } from "../../common";
-import { Context } from "../../core/context";
-import { StateError } from "../../core/errors";
-import { Parser } from "../../core/parser";
-import { Failure } from "../../core/result";
+import { type Parser } from "../../core/parser";
+import { Context, Failure, StateError } from "../../core/context_result_and_errors";
 import { DelegateParser } from "../combinator/delegate";
 
 export { TrimmingParser };

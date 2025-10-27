@@ -1,18 +1,17 @@
-import { Context } from "vm";
-import { int } from "../../common";
-import { StateError } from "../../core/errors";
-import { Parser } from "../../core/parser";
-import { Result } from "../../core/result";
-import { CharacterPredicate } from "../character/predicate";
-import { ConstantCharPredicate } from "../character/predicate/constant";
+import {Context} from "vm";
+import {int} from "../../common";
+import {Result, StateError} from "../../core/context_result_and_errors";
+import {CharacterPredicate} from "../character/predicate";
+import {ConstantCharPredicate} from "../character/predicate/constant";
+import {ParserImpl} from "../../core/parserImpl";
 
 export { CharacterParser, SingleCharacterParser, UnicodeCharacterParser };
 
-abstract class CharacterParser extends Parser<string> {
+abstract class CharacterParser extends ParserImpl<string> {
     readonly predicate: CharacterPredicate;
     readonly message: string;
 
-    constructor(predicate: CharacterPredicate, message: string) {
+    protected constructor(predicate: CharacterPredicate, message: string) {
         super();
         this.predicate = predicate;
         this.message = message;

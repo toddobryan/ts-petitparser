@@ -1,8 +1,6 @@
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { StateError } from "../../core/errors";
 import type { Parser } from "../../core/parser";
-import { Failure, type Result } from "../../core/result";
+import { Context, Failure, type Result, StateError } from "../../core/context_result_and_errors";
 import { selectLast, type FailureJoiner } from "../utils/failure_joiner";
 import { ListParser } from "./list";
 

@@ -1,15 +1,14 @@
-import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
+import type {int} from "../../common";
+import type {Context, Result} from "../../core/context_result_and_errors";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { EndOfInputParser, endOfInput }
+export {EndOfInputParser, endOfInput}
 
 const endOfInput = (message: string = "end of input expected"): EndOfInputParser => {
     return new EndOfInputParser(message);
 }
 
-class EndOfInputParser extends Parser<null> {
+class EndOfInputParser extends ParserImpl<null> {
     readonly message: string;
 
     constructor(message: string) {

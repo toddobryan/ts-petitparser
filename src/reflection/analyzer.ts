@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { StateError } from "../core/errors";
+import { StateError } from "../core/context_result_and_errors";
 import type { Parser } from "../core/parser";
 import { EpsilonParser } from "../parser/misc/epsilon";
 import type { Predicate } from "../shared/types";

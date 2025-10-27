@@ -1,8 +1,7 @@
 import type { int } from "../../common";
-import type { Context } from "../../core/context";
 import type { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
-import { Failure } from "../../core/result";
+import type { Context, Result } from "../../core/context_result_and_errors";
+import { Failure } from "../../core/context_result_and_errors";
 import { DelegateParser } from "./delegate";
 
 export { NotParser };

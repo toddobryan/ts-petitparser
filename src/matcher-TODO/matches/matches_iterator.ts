@@ -1,6 +1,6 @@
 import { type int } from "../../common";
-import { Context } from "../../core/context";
 import { Parser } from "../../core/parser";
+import {Context} from "../../core/context_result_and_errors";
 
 export { MatchesIterator };
 

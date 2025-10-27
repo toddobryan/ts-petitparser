@@ -1,12 +1,13 @@
 import { type int } from "../../common";
-import { Context, Result } from "../../core/result";
+import { Context, Result } from "../../core/context_result_and_errors";
 import { Parser } from "../../core/parser";
+import {ParserImpl} from "../../core/parserImpl";
 
 export { NewlineParser, newline };
 
 const newline = (message = "newline expected"): Parser<string> => new NewlineParser(message);
 
-class NewlineParser extends Parser<string> {
+class NewlineParser extends ParserImpl<string> {
     readonly message: string;
 
     constructor(message: string) {

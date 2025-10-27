@@ -1,16 +1,16 @@
-import type { int } from "../../common";
-import type { Context } from "../../core/context";
-import { Parser } from "../../core/parser";
-import type { Result } from "../../core/result";
-import type { Predicate } from "../../shared/types";
+import type {int} from "../../common";
+import {type Parser} from "../../core/parser";
+import type {Context, Result} from "../../core/context_result_and_errors";
+import type {Predicate} from "../../shared/types";
+import {ParserImpl} from "../../core/parserImpl";
 
-export { PredicateParser, predicate };
+export {PredicateParser, predicate};
 
 const predicate = (length: int, predicate: Predicate<string>, message: string): Parser<string> => {
     return new PredicateParser(length, predicate, message);
 }
 
-class PredicateParser extends Parser<string> {
+class PredicateParser extends ParserImpl<string> {
     readonly length: int;
     readonly predicate: Predicate<string>;
     readonly message: string;
@@ -28,7 +28,7 @@ class PredicateParser extends Parser<string> {
         if (stop <= context.buffer.length) {
             const result = context.buffer.substring(start, stop);
             if (this.predicate(result)) {
-                return context.success(result, stop as int); 
+                return context.success(result, stop as int);
             }
         }
         return context.failure(this.message);

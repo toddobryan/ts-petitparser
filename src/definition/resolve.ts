@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { StateError } from "../core/errors";
+import { StateError } from "../core/context_result_and_errors";
 import { Parser } from "../core/parser";
 import { ResolvableParser } from "../parser/utils/resolvable";
 
@@ -27,7 +27,11 @@ const resolve = <T>(parser: Parser<T>): Parser<T> => {
     return parser;
 };
 
-const _dereference = <T>(parser: Parser<T>, mapping: Map<Parser<any>, Parser<any>>): Parser<T> => {
+const _dereference = <T>(
+        parser: Parser<T>,
+        mapping: Map<Parser<any>,
+        Parser<any>>
+): Parser<T> => {
     const references = new Set<ResolvableParser<any>>();
     while (parser instanceof ResolvableParser) {
         if (mapping.has(parser)) {

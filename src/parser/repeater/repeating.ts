@@ -1,5 +1,5 @@
 import type { int } from "../../common";
-import { StateError } from "../../core/errors";
+import { StateError } from "../../core/context_result_and_errors";
 import type { Parser } from "../../core/parser";
 import { DelegateParser } from "../combinator/delegate";
 

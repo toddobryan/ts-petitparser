@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type int } from "../common";
-import { Context } from "../core/context";
 import { Parser } from "../core/parser";
 import { transformParser } from "../reflection/transform";
 import { type VoidCallback, type Predicate } from "../shared/types";
+import {Context} from "../core/context_result_and_errors";
 
 export { progress };
 

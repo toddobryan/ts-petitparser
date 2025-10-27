@@ -1,7 +1,6 @@
 import { genArray, type int } from "../../common";
-import { Context } from "../../core/context";
 import { Parser } from "../../core/parser";
-import { Failure, Result } from "../../core/result";
+import { Context, Failure, Result } from "../../core/context_result_and_errors";
 import { DelegateParser } from "../combinator/delegate";
 
 export { PermuteParser };
